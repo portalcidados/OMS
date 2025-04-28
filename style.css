@@ -1,30 +1,71 @@
 body {
     overflow: hidden;
+    font-family: Inter;
 }
 
 #app {
-    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0px;
     width: 100%;
-    height: 100vh;
-    font-family: 'Roboto Condensed', sans-serif;
+    height: 100%;
+    background-color: #f3f3f3;
+}
+
+#geop {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f3;
+}
+
+#pemob {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f3;
 }
 
 #menu {
     position: absolute;
     top: 0px;
     left: 0px;
+    width: 50%;
+    height: 10%;
+    background-color: #ffffff00;
+    z-index: 2;
+    
+}
+#menu_catalog {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     width: 100%;
     height: 10%;
+    background-color: white;
+}
+
+#menu_pemob {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 10%;
+    background-color: white;
 }
 
 .botao_menu {
     position: absolute;
-    top: 0px;
-    background-color: #c0002655;
-    width: 50%;
-    height: 100%;
-    font-size: 30px;
-    color: white;
+    top: 5px;
+    background-color: #f3f3f3;
+    width: 80px;
+    height: 25px;
+    font-size: 12px;
+    color: #030303;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -38,16 +79,69 @@ body {
 
 .botao_menu.clicked {
     position: absolute;
-    top: 0px;
-    background-color: #c00026
+    background-color: #c00026;
+    color: white;
 }
 
-#botao_table {
-    left: 0px;
+#botao_tables {
+    right: 165px;
 }
 
 #botao_graphs {
-    right: 0px;
+    right: 85px;
+}
+
+#botao_sobre {
+    right: 5px;
+}
+
+#botao_fundo {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 250px;
+    height: 35px;
+    background-color: #f3f3f3;
+}
+
+#logo_insper {
+    position: absolute;
+    top: 13px;
+    left: 15px;
+    width: 100px;
+    height: 40px;
+    background-image: url(/images/logo_insper.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#menu_itens {
+    position: absolute;
+    top: 0px;
+    left: 150px;
+    height: 100%;
+    width: 400px;
+}
+
+ul.horizontal-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px;
+    display: flex;
+    gap: 1rem;
+}
+  
+ul.horizontal-list li {
+    padding: 0.5rem 0.5rem;
+}
+
+ul.horizontal-list li:hover {
+    color: #c00026;
+    cursor: pointer;
+}
+
+ul.horizontal-list li.clicked {
+    color: #c00026;
 }
 
 .tool {
@@ -56,33 +150,69 @@ body {
     left: 0px;
     width: 100%;
     height: 90%;
+    background-color: #f3f3f3;
 }
 
-#arvore {
+#metadado_catalog {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    width: calc(75% - 31px);
+    left: calc(25% + 17px);
+    background-color: white;
+    padding: 0px 10px 0px 10px;
+}
+
+#arvore, #arvore_catalog {
+    position: absolute;
+    top: 120px;
+    left: 10px;
     width: 25%;
-    height: 100%;
+    height: calc(100% - 120px);
     background-color: #fff;
 }
+
+#titulos, #titulos_catalog {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 25%;
+    height: 108px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#titulo, #titulo_catalog {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 15px 15px 15px;
+    color: #030303;
+    margin-right: 10px;
+}
+
+#subtitulo, #subtitulo_catalog {
+    font-size: 15px;
+    padding: 0px 15px 15px 15px;
+    color: #414042;
+}
   
-#sheet {
+#sheet, #sheet_catalog {
     position: absolute;
     top: 0px;
     left: 25%;
     width: 75%;
     height: 100%;
-    background-color: lightcoral;
+    background-color: #f3f3f3;
 }
 
 #graph {
     position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
     z-index: 0;
+    background-color: white;
+    overflow: hidden;
 }
 
 #distribution {
@@ -92,6 +222,22 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
+}
+
+#estados + .select2-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(25% - 15px) !important;
+    z-index: 1000;
+}
+
+#variaveis + .select2-container {
+    position: absolute;
+    top: 10px;
+    left: calc(25% - 15px + 15px);
+    width: calc(25% - 15px) !important;
+    z-index: 1000;
 }
 
 #slider {
@@ -121,9 +267,9 @@ body {
     top: 10px;
     width: 100px;
     height: 30px;
-    background-color: #c0002655;
+    background-color: white;
     font-size: 15px;
-    color: white;
+    color: #030303;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -137,6 +283,7 @@ body {
 
 .botao_grafico.clicked {
     background-color: #c00026;
+    color: white;
 }
 
 #Tree {
@@ -200,4 +347,93 @@ a[id^="no_checkbox_"].jstree-anchor.jstree-disabled.jstree-hovered {
     opacity: 1;
     filter: none;
     -webkit-filter: grayscale(0%);
+}
+
+input.gridjs-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border: 0px solid;
+    border-radius: 0px;
+    font-size: 14px;
+    line-height: 1.45;
+    outline: none;
+    width: calc(100% - 24px);
+    height: 35px;
+    padding: 10px 13px;
+    position: relative;
+    left: 15px;
+    top: 2px;
+}
+
+.gridjs-search {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.gridjs-wrapper {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border-color: #e5e7eb;
+    border-radius: 0px 0px 0 0;
+    border-top-width: 0px;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, .1), 0 0px 0px 0 rgba(0, 0, 0, .26);
+    display: block;
+    overflow: auto;
+    position: relative;
+    width: calc(100% - 24px);
+    left: 15px;
+    z-index: 1;
+}
+
+.gridjs-footer {
+    background-color: #fff;
+    border-bottom-width: 1px;
+    border-color: #e5e7eb;
+    border-radius: 0 0 0px 0px;
+    border-top: 0px solid;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, .1), 0 0px 0px 0 rgba(0, 0, 0, .26);
+    display: block;
+    padding: 12px 24px;
+    position: relative;
+    width: calc(100% - 24px);
+    z-index: 5;
+    left: 15px;
+}
+
+th.gridjs-th {
+    color: #030303;
+}
+
+.gridjs-wrapper {
+    overflow-x: hidden;
+}
+  
+.gridjs-td, .gridjs-th {
+    white-space: normal;
+    word-break: break-word;
+}
+  
+.jstree .splus > .jstree-themeicon-custom {
+    display: none;
+}
+
+.jstree .tema > .jstree-themeicon-custom {
+    display: none;
+}
+  
+#texto_about {
+    position: absolute;
+    background-color: white;
+    top: 10px;
+    left: 10px;
+    padding: 50px;
+    width: calc(100% - 120px);
+    height: calc(100% - 120px);
+}
+
+.leaflet-control-attribution.leaflet-control {
+    display: none;
 }
